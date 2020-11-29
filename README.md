@@ -1,2 +1,2 @@
-# react-react-ssr-demo
-this is a react server sider render demo project.
+# react-ssr-demo
+This is a react server sider render demo project.
