@@ -4,8 +4,9 @@
   "description": "This is a react server sider render demo project.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/bundle.js",
-    "build": "webpack --config ./webpack/webpack.server.js",
+    "dev": "npm-run-all --parallel dev:**",
+    "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\"",
+    "dev:build": "webpack --config ./webpack/webpack.server.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
