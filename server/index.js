@@ -1,18 +1,16 @@
-var express = require("express");
-var app = express();
+import express from "express";
+import React from "react";
+import Home from "../src/containers/Home";
+import { renderToString } from "react-dom/server";
+const app = express();
+
+const content = renderToString(<Home />);
 
 app.get('/', (req, res) => {
     res.send(
-        `<!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
-        <body>
-            <div>hello world!</div>
-        </body>
+        `<html>
+            <head></head>
+            <body><div>${content}</div></body>
         </html>`
     );
 });
