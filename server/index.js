@@ -1,23 +1,11 @@
 import express from "express";
-import React from "react";
-import Home from "../src/containers/Home";
-import { renderToString } from "react-dom/server";
+import { render } from "./util";
 const app = express();
 
 app.use(express.static("public"));
 
-const content = renderToString(<Home />);
-
-app.get('/', (req, res) => {
-    res.send(
-        `<html>
-            <head></head>
-            <body>
-                <div id="root">${content}</div>
-            </body>
-            <script src="./index.js"></script>
-        </html>`
-    );
+app.get('*', (req, res) => {
+    res.send(render(req));
 });
 
 var server = app.listen(3000, () => {
