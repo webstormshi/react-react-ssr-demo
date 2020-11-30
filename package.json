@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./build/bundle.js",
-    "build": "webpack --config ./webpack/webpack.server.js",
+    "build": "webpack --config ./webpack/webpack.server.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
